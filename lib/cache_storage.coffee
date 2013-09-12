@@ -11,7 +11,7 @@ class CacheStorage
 
   connect: (key = null) ->
     key = @encode key
-    @cache[key] =
+    @cache[key] ?=
       groupCache: {}
       dataCache: []
     @groups = []
