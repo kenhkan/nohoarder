@@ -9,11 +9,15 @@ class CacheStorage
     # An array of stored cache by time of creation
     @journal = []
 
+  initialize: (key = null) ->
+    if key?
+      @cache[key] ?=
+        groupCache: {}
+        dataCache: []
+
   connect: (key = null) ->
     key = @encode key
-    @cache[key] ?=
-      groupCache: {}
-      dataCache: []
+    @initialize key
     @groups = []
 
   beginGroup: (group, key = null) ->
@@ -49,6 +53,7 @@ class CacheStorage
   decode: (x) -> if x? then x.replace /^__cache__/, "" else x
 
   locate: (key = null) ->
+    @initialize key
     { groupCache, dataCache } = @cache[key] or
       throw new Error("No cache with key #{key} to locate")
 
