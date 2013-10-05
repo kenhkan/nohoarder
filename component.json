@@ -1,0 +1,23 @@
+{
+  "name": "nohoarder",
+  "description": "One-off libraries for NoFlo components",
+  "keywords": [
+    "noflo",
+    "libraries"
+  ],
+  "author": "Kenneth Kan <kenhkan@gmail.com>",
+  "version": "0.0.3",
+  "license": "MIT",
+  "repo": "kenhkan/nohoarder",
+  "scripts": [
+    "lib/cache_storage.coffee",
+    "index.js",
+  ],
+  "dependencies": {
+    "component/underscore": "*"
+  },
+  "json": [
+    "component.json"
+  ],
+  "main": "lib/main.coffee"
+}

@@ -20,5 +20,5 @@
   "dependencies": {
     "underscore": "~1.4.0"
   },
-  "main": "lib/main.coffee"
+  "main": "index.js"
 }
